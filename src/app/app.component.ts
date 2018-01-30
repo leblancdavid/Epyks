@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.skypeClient.initialize().subscribe(result => {
-      debugger;
+      console.log("SkypeClient was initialized correctly.");
       console.log(this.skypeClient.clientInstance);
     });
     

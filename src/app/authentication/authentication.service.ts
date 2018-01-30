@@ -10,10 +10,11 @@ export class AuthenticationService implements OnInit {
     constructor() { }
 
     ngOnInit() {
-      
+
     }
 
     login(username: string, password: string): Observable<any> {
+      return null;
     }
 
     logout(): any {
