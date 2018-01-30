@@ -13,6 +13,18 @@ export class SkypeClient {
         
         this.initializeSkypeApp().subscribe(result => {
           this.clientInstance = result;
+          this.clientInstance.signInManager.state.when("SigningIn", () => {
+            console.log('Signing in...');
+          });
+          this.clientInstance.signInManager.state.when("SigningOut", () => {
+            console.log('Signing out...');
+          });
+          this.clientInstance.signInManager.state.when("SignedOut", reason => {
+            console.log(reason);
+          });
+          this.clientInstance.signInManager.state.when("SignedIn", () => {
+            console.log('Signed in...');
+          });
           observer.next(this.clientInstance);
           observer.complete();
         });

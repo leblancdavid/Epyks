@@ -17,26 +17,32 @@ export class AuthenticationService implements OnInit {
 
     login(username: string, password: string): Observable<boolean> {
       return new Observable<boolean>(observer => {
-        if(this.skypeClient.clientInstance.signInManager.state() == "SignedIn") {
-          observer.next(true);
-          observer.complete();
-        }
-        else {
-          this.skypeClient.clientInstance.signInManager.signIn({
-            username: username,
-            password: password,
-            domain: '.skype'
-          }).then(() => {
+        let check = this.skypeClient.clientInstance.personsAndGroupsManager.mePerson.id();
+        debugger;
+        this.skypeClient.clientInstance.signInManager.signOut().then(() => {
+          let state = this.skypeClient.clientInstance.signInManager.state();
+          if(state == "SignedIn") {
             observer.next(true);
             observer.complete();
-          },
-          error => {
-            console.error(error);
-            observer.next(false);
-            observer.complete();
-          })
-        }
-      })
+          }
+          else {
+            this.skypeClient.clientInstance.signInManager.signIn({
+              "version": "1234567890",
+              "username": username,
+              "password": password
+            }).then(() => {
+              observer.next(true);
+              observer.complete();
+            },
+            error => {
+              console.error(error);
+              observer.next(false);
+              observer.complete();
+            })
+          }
+        });
+        
+      });
     }
 
     logout(): any {

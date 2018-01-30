@@ -5,10 +5,12 @@ import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { SkypeClient } from './skype-client';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
