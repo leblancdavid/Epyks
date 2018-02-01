@@ -6,6 +6,11 @@
     "baseUrl": "",
     "types": []
   },
+  "include": [
+    "../node_modules/skype-http/**/*.ts",
+    "./main.ts",
+    "./polyfills.ts"
+  ],
   "exclude": [
     "test.ts",
     "**/*.spec.ts"

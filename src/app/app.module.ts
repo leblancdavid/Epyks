@@ -7,6 +7,8 @@ import { SkypeClient } from './skype-client';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { HomeComponent } from './home/home.component';
 
+import * as skypeHttp from "skype-http";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +17,7 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     AuthenticationModule,
-    routing
+    routing 
   ],
   providers: [SkypeClient],
   bootstrap: [AppComponent]
