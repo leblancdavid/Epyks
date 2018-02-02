@@ -8,6 +8,8 @@
   },
   "include": [
     "../node_modules/skype-http/**/*.ts",
+    "../node_modules/kryo/**/*.ts",
+    "../node_modules/incident/**/*.ts",
     "./main.ts",
     "./polyfills.ts"
   ],

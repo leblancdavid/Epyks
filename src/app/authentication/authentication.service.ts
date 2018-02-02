@@ -16,8 +16,7 @@ export class AuthenticationService implements OnInit {
     }
 
     login(username: string, password: string): Observable<boolean> {
-      return new Observable<boolean>(observer => {
-      });
+      return this.skypeClient.connect(username, password);
     }
 
     logout(): any {

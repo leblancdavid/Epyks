@@ -8,7 +8,7 @@ import { SkypeClient } from './skype-client';
 })
 export class AppComponent implements AfterViewInit {
   title = 'app';
-  constructor(private skypeClient : SkypeClient) {
+  constructor() {
 
   }
 
