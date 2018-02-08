@@ -9,13 +9,16 @@ import { Api, connect } from "skype-http";
 
 @Injectable()
 export class SkypeClient {
-  public clientApi: Api;
+ // public clientApi: Api;
+  constructor() {
+    //this.clientApi = null;
+  }
 
   public connect(username: string, password: string): Observable<boolean> {
     return new Observable<any>(observer => {
       connect({credentials: {username: username, password: password}})
       .then(result => {
-        this.clientApi = result;
+        //this.clientApi = result;
         observer.next(true);
         observer.complete();
       })

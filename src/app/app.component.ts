@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { SkypeClient } from './skype-client';
+import path from "path";
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
+    let posix = path.posix;
+    debugger;
   }
 }
