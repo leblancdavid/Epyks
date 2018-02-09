@@ -4,7 +4,11 @@ export class Schedule extends Component {
   render() {
     return(
       <div>
-        <h1>Welcome to the Tornadoes Website!</h1>
+        <ul>
+          <li>6/5 @ Evergreens</li>
+          <li>6/8 vs Kickers</li>
+          <li>6/14 @ United</li>
+        </ul>
       </div>
     );
   }
