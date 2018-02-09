@@ -1,7 +1,7 @@
 
 //TODO: https://tylermcginnis.com/react-router-protected-routes-authentication/
 
-const AuthenticationService = {
+export const AuthenticationService = {
   isAuthenticated: false,
   authenticate(callback) {
     this.isAuthenticated = true;
