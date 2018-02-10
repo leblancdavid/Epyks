@@ -20,7 +20,7 @@ export class Login extends Component {
   }
 
   login = () => {
-    AuthenticationService.authenticate(() => {
+    AuthenticationService.authenticate(this.state.username, this.state.password, () => {
       this.setState({ redirectToReferrer: true });
     })
   }

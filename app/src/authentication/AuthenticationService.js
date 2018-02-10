@@ -1,11 +1,13 @@
-
-//TODO: https://tylermcginnis.com/react-router-protected-routes-authentication/
+import { SkypeClient } from './../services/SkypeClient'
 
 export const AuthenticationService = {
   isAuthenticated: false,
-  authenticate(callback) {
-    this.isAuthenticated = true;
-    setTimeout(callback, 100);//fake async
+  authenticate(username, password, callback) {
+    var result = new SkypeClient();
+    result.connect(username, password).then(() => {
+      this.isAuthenticated = true;
+      callback();
+    });
   },
   signout(callback) {
     this.isAuthenticated = false;
